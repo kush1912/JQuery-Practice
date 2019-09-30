@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"></html>
+<head>
+<title>STRING NO CONVERSION</title>
+<script type="text/javascript">
+
+    function ADDNO()
+    {
+        var first=document.getElementById("t1").value;
+        var second=document.getElementById("t2").value;
+        if(first=="")
+        {
+            alert("FIRST NO. REQUIRED!!");
+            return;
+        }
+        if(second=="")
+        {
+            alert("second NO. REQUIRED!!");
+            return;
+        }
+        first=parseFloat(first);
+        second=parseFloat(second);  
+             
+       // isNaN not working 
+       if(isNAN(first))
+       {
+            alert("PLEASE ENTER A VALID NO. in FIRST TEXTBOX !! ");
+            return;
+       }
+       if(isNAN(second))
+       {
+           alert("PLEASE ENTER A VALID NO. in SECOND TEXTBOX !! "); 
+           return;
+       }
+       document.getElementById("t3").value=first+second;
+    }
+
+</script>
+</head>
+<body>
+<forms>
+    First no.
+    <input type="text" id="t1"><br>
+    SECOND NO.
+    <input type="text" id="t2"><br>
+    RESULT
+    <input type="text" id="t3"><br>
+    <input type="button" value="ADD" onclick="ADDNO()">
+
+</forms>
+</body>
+</html>

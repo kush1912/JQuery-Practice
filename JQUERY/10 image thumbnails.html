@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>THUMBNAILS</title>
+
+<style type="text/css">
+	.imgstyle
+	{
+		height:100px;
+		width: 100px;
+		border: 3px solid grey;
+	}
+</style>
+
+</head>
+<body>
+<img height="540px" width="540px" style="border:3px solid grey" src="E:\JQUERY\images\download.jpg" id="mainimage">
+<br>
+
+<div id="mydiv" onclick="changeimg(event)">
+<img class="imgstyle" src="E:\JQUERY\images\download.jpg">
+<img class="imgstyle" src="E:\JQUERY\images\7.jpg ">
+<img class="imgstyle" src="E:\JQUERY\images\images.jpg ">
+<img class="imgstyle" src="E:\JQUERY\images\8.jpg ">
+<img class="imgstyle" src="E:\JQUERY\images\9.jpg ">
+<img class="imgstyle" src="E:\JQUERY\images\4.jpg ">
+</div>
+
+<script type="text/javascript">
+	/// this code doesn't work .....this shows hand cursor and changes the border color to red when mouseover
+	var images=document.getElementById("mydiv").getElementByTagName("img");
+
+	for( var i=0; i<images.length; i++)
+	{
+		images[i].onmouseover = function()
+		{
+			this.style.cursor='hand';
+			this.style.bordercolor="red";
+		}
+		images[i].onmouseout=function()
+		{
+			this.style.cursor='pointer';
+			this.style.bordercolor='grey';
+        }
+	}
+
+
+	function changeimg(event)
+	{
+		event=event || window.event;
+		var targetElement= event.target || event.srcElement;
+		if(targetElement.tagName == "IMG")
+		{
+			document.getElementById("mainimage").src=targetElement.getAttribute("src");
+		}
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"></html>
+<head>
+<title>CLOSURES</title>
+<!--<script src="jquery-3.3.1.js"></script>
+-->
+
+</head>
+<body>
+    <form id=form1>
+        
+        <script type="text/javascript">
+	var click=0;
+
+	var incrementclickcount = (function()
+	{
+		var clickcount = 0;
+		return function()
+		{
+			return ++clickcount;
+		}
+	})();   //these extra pair of parenthesis make it a self invoking function 
+
+</script>
+       
+        <input type="button" name="b1", value="click me" onclick="alert(incrementclickcount());">   <!--if we don't include the parenthesis next to incrementclickcount outer function gets incremented by just once  and the body of the outer function appers on the alert box-->
+    	<input type="button" name="b2", value="click on me" onclick="alert(click++)">   
+    </form>
+</body>    
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"></html>
+<head>
+<title>ARRAYS</title>
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    var arr=new Array(20);          //makes array of size 20
+    var a=Array(20,30,40,79);       // populates the array with the following values
+    document.write(arr+"<br>"+a+"<br>");
+    var arr1=new Array("DAVID","MArk","zavin","Ajay");  
+    var arr2=new Array(45,2,5,1,90,34);
+    arr1.sort();
+    arr2.sort();         // numbers have not been sorted properly
+    document.write(arr1+"<br>");
+    document.write(arr2);
+    document.write("<hr>");
+   
+
+    document.write("MUTATOR METHODS AND NON MUTATOR METHODS"+"<hr>");
+    a.push(120);              //adds element at end
+    document.write(a+"<br>");
+    var temp= a.pop();        // removes and return from the end
+    document.write(a+"---------->"+temp+"<br>");
+    temp=a.shift();                //removes from begining and return
+    document.write(a+"---------->"+temp+"<br>");
+    a.unshift(178);           //adds in the begining
+    document.write(a);
+   
+
+    document.write("<br>"+"<hr>"+"SORTING NUMBERS"+"<hr>");
+    a.sort(function(a,b){return  a-b});      ///sorts integers;
+    document.write(a);
+   
+    a.splice(2,0,3,4)
+    document.write("<br>"+a);
+   
+    
+    document.write("<br>"+"<br>"+"<hr>"+"ARRAY FILTER METHODS"+"<hr>");
+    function iseven(value, index, array)
+    {
+    	return value%2==0;
+    }
+    var result=a.filter(iseven);
+    document.write(result);
+    arr1.push("DAVID");                //to remove duplicate entries from the array
+    document.write("<br>"+arr1);
+    function duplicate(value, index, array)
+    {
+    	return array.indexOf(value)==index;    //o should be capital
+    }
+    var res=arr1.filter(duplicate);
+    document.write("<br>"+res);
+
+
+</script>
+
+</head>
+<body>
+    <form id=form1 runat="srver">
+    </form>
+</body>    
+</html>

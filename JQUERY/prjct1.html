@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PRJCT</title>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+	<style type="text/css">
+		.styleclass
+		{
+			display:table-cell;
+			border:5px solid black;
+			padding:20px;
+			text-align: center;
+		}
+
+
+
+        .thumbnail:hover 
+        {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:500px;
+    height:auto;
+    display:block;
+    z-index:999;
+}
+	</style>
+
+
+
+
+
+
+
+</head>
+<body>
+
+	<script type="text/javascript">
+		function enlarge(img) {
+			img.style.height = img.style.height*1.5;
+			img.style.width = img.style.width*1.5;
+		};
+		function drawtable()
+		{
+			var rows=document.getElementById("t1").value;
+			var table="";
+			var counter=0;
+			for(var i=0;i<rows;i++)
+			{
+				table+='<tr>';
+				for(var j=0;j<3;j++)
+				{
+					var imgsrc="E:/JQUERY/pic/"+( Number(counter)+1)+ '.jpg';
+					table+=`<td><img onclick='height="340px"; width="210px"' src="'+imgsrc + '"  style=" height:170px; width:105px" ></td>`;
+					
+//				$("img").mouseover(function() { $("img").css({ width: '150px', height: '150px' }); 
+//				   });
+				
+					counter++;
+				}
+				table+='</tr>';
+			}
+
+			document.write('<table align=center cellpadding=10px cellspacing=177.5px >'+table+'</table>');
+		}
+	</script>
+
+
+
+	<forms>
+		<input type="text" id="t1">
+		<input type="button" value="DYNAMIC TABLE" onclick="drawtable()">
+	</forms>
+</body>
+</html>

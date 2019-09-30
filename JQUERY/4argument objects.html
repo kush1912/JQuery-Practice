@@ -1,0 +1,29 @@
+<script type="text/javascript" lang="javascript">
+	
+	function convertintoarray()
+	{
+		            ///this converts the  aruments object  into an array
+	}
+
+	function printargument()
+	{
+		document.write("Arguments count= "+ arguments.length+"<br>");
+		for(var i=0;i<arguments.length;i++)
+		{
+			document.write("Argument"+i+" = "+arguments[i]+"<br>");
+		}
+		document.write("<br>");    
+		var arr1=[].slice.call(Argument);   
+	    arr1.push(1490);
+	    document.write(arr1);
+	}
+
+	//printargument();
+	printargument(10,20,30,40);
+
+
+	printargument("A","B")
+
+
+
+</script>

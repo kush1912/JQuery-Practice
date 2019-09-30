@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<style type="text/css">
+		   .stylecClass
+		   {
+			   display:table-cell;
+			   border:5px solid black;
+			   padding:20px;
+			   text-align: center;
+		   }
+    	</style>
+    </head>
+		<body>
+			<div class="stylecClass" onclick="alert('DIV CLICKED')">DIV ELEMENT
+			<span class="stylecClass" onclick="alert('SPAN CLICKED')">SPAN ELEMENT
+				<input type="button" value="CLICK ME" onclick="alert('BUTTON CLICKED')">
+			</span>	
+			</div>
+
+			<hr height="50px">
+			
+			<div id="div1" class="stylecClass">DIV 1
+				<div id="div2" class="stylecClass">DIV 2
+					<div id="div3" class="stylecClass">DIV 3
+					</div>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				var divElements=document.getElementsByTagName('div');
+				for(var i=0; i < divElements.length; i++)
+				{
+					divElements[i].onclick=function(event)
+					{
+	
+					/*	
+	                to stop the event bubbling thing comment out
+					event=event||window.event;
+
+						if(event.stopPropagation)
+						{
+							event.stopPropagation()
+						}
+
+						else
+						{
+							event.cancelBubble=true;
+						}
+                    */
+						this.style.borderColor='red';
+						alert(this.getAttribute('id')+"border color changed");
+					}
+				}
+			</script>
+		</body>
+</html>

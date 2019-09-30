@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PREVENTING BROWSER DEAFAULT ACTIONS</title>
+</head>
+
+ <!--oncontextmenu event turning it int false just disables all the deafult right click options like copying the contents. there are many other ways of doing that by using javascript. 
+<body oncontextmenu="return false"> 	-->
+
+<body> 
+	<h1>ON THIS PAGE RIGHT CLICK IS DISABLED</h1>
+	<br>
+	<a href="www.facebook.com" onclick="preventDefaultAction">faceboook</a>
+	<!-- this can also be done by simply setting return false in onclick event -->
+	<br>
+	<script type="text/javascript">
+	///Default action can be prevented using prevent default method
+		document.oncontextmenu= preventDefaultAction;
+		function preventDefaultAction(event)
+		{
+			if(event.preventDefault)
+			{
+				event.preventDefault();
+			}
+			else
+			{
+				event.returnValue=false;
+			}
+		}
+
+	</script>
+
+</body>
+</html>

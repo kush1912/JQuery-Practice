@@ -1,0 +1,32 @@
+<img src="E:/JQUERY/images/1.jpg" id="image" style="height:550px; width:1050px" />
+<br>
+<input type="button" value="start slide show" onclick="startslide()">
+<input type="button" value ="stop" onclick="stopslide()">
+<br>
+<div id="result"></div>
+<script type="text/javascript" lang="javascript">
+	var intervalId;
+	function startslide()
+	{
+		intervalId = setInterval(changeimg,500);
+	}
+	function stopslide()
+	{
+		clearInterval(intervalId);
+	}
+
+	function changeimg()
+	{
+		var imgsrc= document.getElementById("image").getAttribute("src");
+		var currentimgno = imgsrc.substring(imgsrc.lastIndexOf("/")+1,imgsrc.lastIndexOf("/")+2);
+		if(currentimgno==6)
+		{
+			currentimgno=0;
+		}
+		var newimg = "E:/JQUERY/images/"+( Number(currentimgno)+1)+".jpg"; 
+		document.getElementById("image").setAttribute("src",newimg);
+		document.write(curentimgno);
+		//document.getElementById("result").innerHTMl=currentimgno;
+	}
+	changeimg(); 
+</script>
